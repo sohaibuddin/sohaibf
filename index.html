@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form</title>
+	<style>
+		*{
+			font-family: Courier New;
+			background-image: url("bgpic1.jpg") ;
+			background-size: cover;
+			font-size: 1rem;
+			box-sizing: border-box;
+			background-repeat: no-repeat;
+		}
+		#form{
+			text-align: center;	
+			margin: 8%;
+			background-color: pink;
+			/*border: 2px solid #000080 ;	*/
+		}
+		input{
+			border: 2px solid #3397B9 ;
+			margin: 1rem;
+			margin-left: 50px;
+			border-radius: 5px;
+			width: 50%;
+			padding: 0.5rem;
+			top: 50%;
+			color:  #FF8C00;
+		}
+		button	{
+				width: 20%;
+				background-color: yellow;  
+				padding: 0.5rem;
+				font-weight: bold;
+				margin: 0.7rem;
+				margin-left: 10%;
+				border-radius: 10px;
+		}
+		button:hover {
+			background-color: pink ;
+			color: white;
+			box-shadow: 1px 2px pink;
+		}
+		h2{
+			text-align: center;
+			margin: 5%;
+			font-size: 2rem;
+		}
+		#name {
+			margin-left: 154px;
+		}
+		#Password{
+			margin-left: 121px;
+		}
+		#checkbox{
+			margin-left: -170px;
+		}
+		.foot{
+			text-align: center;
+			margin-top: 260px;			
+		}
+		#error{
+			text-align: center;	
+		}
+	</style>
+</head>
+<body>
+	<div id="error"></div>
+	<form  id="form" action="/" method="GET" >
+	<h2>Login</h2>
+	<div>
+		<label for="name">Name  </label>
+		<input type="text"  id="name" placeholder="Type Username" required> 
+	</div>
+	<div>
+		<label for="password">Password  </label>
+		<input type="Password" id="Password" placeholder="Type Password">
+	</div>
+	<button type="submit">Submit</button>
+	</form>
+	<script>
+		const name = document.getElementById("name")
+		const password = document.getElementById("password")
+		const form = document.getElementById("form")
+		const errorElement = document.getElementById("error")
+
+		form.addEventListener('submit' , (e) => {
+			let messages = []
+			if (name.value === '' || name.value == null) {
+				messages.push('Name is Required')
+			} 
+
+			if (Password.value.length <= 6) {
+				messages.push('Password must be longer than 6 characters')
+			}
+
+			if (Password.value.length >= 12) {
+				messages.push('Password must be less than 12 characters')
+			}
+
+			if (Password.value === 'password') {
+				messages.push('password cannot be password');
+			}
+
+			if (messages.length > 0) {
+			e.preventDefault()
+			errorElement.innerText = messages.join(' , ');
+			}
+		})
+	</script>
+	<footer class="foot"> &#169; Created By Sohaib Uddin &#174;<br>&#8481; : 8978249020 </footer>
+</body> 
+</html>
