@@ -2,50 +2,62 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Form</title>
 	<style>
 		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
 			font-family: Courier New;
-			background-image: url("bgpic1.jpg") ;
+			background-image: url("bgpic1.jpg");
 			background-size: cover;
-			font-size: 1rem;
 			box-sizing: border-box;
 			background-repeat: no-repeat;
+			background-attachment: fixed;
+			color: white;
 		}
-		#form{
-			text-align: center;	
-			margin: 8%;
-			background-color: pink;
-			/*border: 2px solid #000080 ;	*/
+		form{
+			text-align: center;
+			margin-top: 5%;
 		}
 		input{
 			border: 2px solid #3397B9 ;
-			margin: 1rem;
-			margin-left: 50px;
-			border-radius: 5px;
-			width: 50%;
-			padding: 0.5rem;
-			top: 50%;
-			color:  #FF8C00;
+			margin: 1rem 50px;
+			border-radius: 8px;
+			width: 40%;
+			padding: 0.8rem;
+			color:  white;
+			background-color: black;
 		}
 		button	{
-				width: 20%;
-				background-color: yellow;  
-				padding: 0.5rem;
-				font-weight: bold;
+				width: 10%;
+				background-color: dodgerblue;  
+				padding: 0.8rem;
+				font-weight: bolder;
 				margin: 0.7rem;
-				margin-left: 10%;
+				margin-right: 22%;
 				border-radius: 10px;
 		}
 		button:hover {
-			background-color: pink ;
+			background-color: #05ce91 ;
 			color: white;
 			box-shadow: 1px 2px pink;
 		}
-		h2{
+		h1{
 			text-align: center;
-			margin: 5%;
-			font-size: 2rem;
+			margin: 2% auto;
+		
+		}
+		.checkbx{
+			margin: auto -35%;
+			position: absolute;
+
+		}
+		.remember{
+			margin:auto 37%;
+			position: absolute;
 		}
 		#name {
 			margin-left: 154px;
@@ -53,22 +65,44 @@
 		#Password{
 			margin-left: 121px;
 		}
-		#checkbox{
-			margin-left: -170px;
-		}
+		
 		.foot{
 			text-align: center;
-			margin-top: 260px;			
+			padding: 1%;
+			margin-top: 16%;
+			color: white;	
+			position: sticky;
+			background-color: black;		
 		}
+		.checkbtn  {
+				margin: auto;
+				text-align: center;
+		}
+		
 		#error{
 			text-align: center;	
 		}
+		@media screen and (min-width: 400px)  and (max-width: 1020px) {
+
+			button {
+				width: 8%;
+				display: inline-block;
+				position: fixed;
+			}
+			.foot {
+				position: fixed;
+				margin: 30% auto;
+				display: inline-block;
+				width: 100%;
+			}
+		}
+		
 	</style>
 </head>
 <body>
 	<div id="error"></div>
-	<form  id="form" action="/" method="GET" >
-	<h2>Login</h2>
+	<form  id="form" action="mailto:sohaibuddin99@gmail.com" method="GET" >
+	<h1>Login</h1>
 	<div>
 		<label for="name">Name  </label>
 		<input type="text"  id="name" placeholder="Type Username" required> 
@@ -77,6 +111,10 @@
 		<label for="password">Password  </label>
 		<input type="Password" id="Password" placeholder="Type Password">
 	</div>
+	<div class="checkbtn">
+	<input class="checkbx" type="checkbox">
+	</div><div class="remember">Remember me</div>
+	<br>
 	<button type="submit">Submit</button>
 	</form>
 	<script>
@@ -109,6 +147,6 @@
 			}
 		})
 	</script>
-	<footer class="foot"> &#169; Created By Sohaib Uddin &#174;<br>&#8481; : 8978249020 </footer>
+	<footer class="foot"> Copyright &#169; Created By Sohaib Uddin &#174; <br> All Rights reserved </footer>
 </body> 
 </html>
